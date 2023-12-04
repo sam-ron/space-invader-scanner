@@ -38,6 +38,14 @@ public class SpaceInvaderGame {
         return scanRadarForInvaderImage(radarImage, spaceInvaderImage);
     }
 
+
+    /**
+     * Use RadarObjectFactory to create child objects of RadorObject
+     * @param filePath
+     * @param factory
+     * @return
+     * @param <T>
+     */
     public <T extends RadarObject> T createImage(String filePath, RadarObjectFactory<T> factory){
         String[][] imageData = fileUtils.readFile(filePath);
         return factory.create(imageData);
@@ -61,8 +69,7 @@ public class SpaceInvaderGame {
         for (int i = 0; i <= radarRows - invaderRows; i++) {
             for (int j = 0; j <= radarColumns - invaderColumns; j++) {
                 // check if the current window matches the pattern
-                if (matchInvaderWithWindow(radarImage.getData(), spaceInvaderImage.getData(), i, j, invaderRows, invaderColumns)) {
-                   // System.out.println("MATCH! " + i + " " + j + " " + invaderRows + " " + invaderColumns);
+                if (comparePatternWithWindow(radarImage.getData(), spaceInvaderImage.getData(), i, j, invaderRows, invaderColumns)) {
                     return true;
                 }
             }
@@ -81,7 +88,8 @@ public class SpaceInvaderGame {
      * @param invaderColumns
      * @return
      */
-    private static boolean matchInvaderWithWindow(String[][] radarImage, String[][] invaderImage, int startRow, int startColumn, int invaderRows, int invaderColumns) {
+    private static boolean comparePatternWithWindow(String[][] radarImage, String[][] invaderImage, int startRow,
+                                                    int startColumn, int invaderRows, int invaderColumns) {
         for (int i = 0; i < invaderRows; i++) {
             for (int j = 0; j < invaderColumns; j++) {
                 if (!radarImage[startRow + i][startColumn + j].equals(invaderImage[i][j])) {

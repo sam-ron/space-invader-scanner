@@ -10,7 +10,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class SpaceInvaderGameTest {
 
-
     private FileUtils fileUtils = new FileUtils();
 
     private SpaceInvaderGame spaceInvaderGame = new SpaceInvaderGame(fileUtils);

@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,15 +24,6 @@ public class FileUtils {
         reader.lines().forEach(line -> fileContent.add(line.split("")));
 
         return fileContent.toArray(String[][]::new);
-    }
-
-    private void print(String[][] fileContent){
-        for (String[] row : fileContent) {
-            for (String s : row) {
-                System.out.print(s);
-            }
-            System.out.println();
-        }
     }
 
 }

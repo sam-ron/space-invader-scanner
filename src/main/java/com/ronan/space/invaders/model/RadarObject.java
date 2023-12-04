@@ -2,7 +2,7 @@ package com.ronan.space.invaders.model;
 
 public abstract class RadarObject {
 
-    private String[][] data;
+    private final String[][] data;
 
     public RadarObject(String[][] data) {
         this.data = data;

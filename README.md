@@ -1,5 +1,12 @@
 # Ronan Sammon - Curve/Fuga Interview Assignment
 
+To run the application in Spring Boot use the following command:
+
+./gradlew bootRun
+
+Alternatively run in Intellij using Spring Boot Run button or execute tests
+
+
 # TODO / things to discuss
 - edge cases/fault tolerance 
 - add output for multiple invaders found and their positions rather than just true/false
